@@ -17,6 +17,8 @@ export const connectToDatabase=async ()=>{
     if(!MONGODB_URL) throw new Error('Mongo db url is not present')
         cached.promise=cached.promise||mongoose.connect(MONGODB_URL,{dbName:'imaginify', bufferCommands:false})
     cached.conn=await cached.promise;
+    console.log("Hii")
     return cached.conn;
 
 }
+connectToDatabase()
